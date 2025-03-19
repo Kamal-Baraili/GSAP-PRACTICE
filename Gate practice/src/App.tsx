@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import "./App.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Hero from "./components/Hero";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,14 +116,14 @@ function App() {
         <div className="flex justify-between absolute inset-0">
           <div ref={box1} className="h-full w-1/2 ">
             <img
-              src="/gate1.png"
+              src="/left-gate.jpg"
               className="h-full w-full object-cover"
               alt=""
             />
           </div>
           <div ref={box2} className="h-full w-1/2 ">
             <img
-              src="/gate2.png"
+              src="/right-gate.jpg"
               className="h-full w-full object-cover"
               alt=""
             />
@@ -156,8 +157,19 @@ function App() {
           </h2>
         </div>
       </div>
-      <div className="h-[100vh] flex items-center justify-center pointer-events-none z-5">
-        <h2 className="text-4xl font-bold text-[#F5C230]">Next Container</h2>
+
+      {/* NEXT CONTAINER */}
+
+      <Hero />
+
+      <div className="bg-black h-screen z-5 flex justify-center items-center">
+        <h1 className="text-amber-400 text-6xl">Next Container</h1>
+      </div>
+      <div className="bg-black h-screen z-5 flex justify-center items-center">
+        <h1 className="text-amber-400 text-6xl">Next Container</h1>
+      </div>
+      <div className="bg-black h-screen z-5 flex justify-center items-center">
+        <h1 className="text-amber-400 text-6xl">Next Container</h1>
       </div>
     </>
   );
