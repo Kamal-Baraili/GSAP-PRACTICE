@@ -1,18 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import Button from "../../shared/button/button";
+import { imageData } from "../../../db/mockdata";
 
 const Hero = () => {
-  const imageData: string[] = [
-    "/gate1.png",
-    "/gate2.png",
-    "/gate3.png",
-    "/gate2.png",
-    "/gate3.png",
-    "/gate3.png",
-    "/gate2.png",
-    "/gate3.png",
-  ];
-
   const mainRef = useRef<HTMLDivElement | null>(null);
   const heroContainerRef = useRef<HTMLDivElement | null>(null);
   const redDivRef = useRef<HTMLDivElement | null>(null);
@@ -183,17 +174,17 @@ const Hero = () => {
         }}
       >
         <img
-          className="w-50 h-30 absolute top-0 left-1/2 transform -translate-x-1/2 z-10"
-          src="/hanging-lamp.png"
+          className="w-50 h-30 absolute top-0 left-1/2 transform -translate-x-1/2 z-100"
+          src="/homepage/hanging-lamp.png"
           alt="Hanging Lamp"
         />
         <div
           ref={redDivRef}
-          className="w-80 h-200 absolute top-30 left-1/2 transform -translate-x-1/2 z-10 opacity-0 transition-all duration-300"
+          className="w-80 h-105 absolute top-30 left-1/2 transform -translate-x-1/2 z-10 opacity-0 transition-all duration-300"
         >
           <img
             className="w-full h-full opacity-95"
-            src="/light-beam.png"
+            src="/homepage/light-beam.png"
             alt=""
           />
         </div>
@@ -206,23 +197,38 @@ const Hero = () => {
           </div>
           {imageData.map((src, index) => (
             <div key={index} className="inline-block flex-shrink-0">
-              <div className="w-[450px] h-[450px] px-5 mr-80 transition-all duration-300 transform mx-4">
+              <div className="w-[450px] h-[450px] px-5 mr-80 transition-all duration-300 transform mx-4 relative">
                 <img
-                  className="w-full h-full object-cover rounded-lg shadow-lg relative z-10"
+                  className="w-full h-full object-cover absolute inset-0 rounded-lg shadow-lg z-20"
                   src={src}
                   alt={`Slide ${index}`}
                 />
                 <div className="img w-[1px] h-5 absolute top-0 left-[50%]"></div>
-                <h4 className="text-white text-7xl absolute top-[40%] left-[30%] z-50">
-                  Gate
-                </h4>
+
+                <p
+                  style={{
+                    WebkitTextStrokeWidth: "3px",
+                    WebkitTextStrokeColor: "#ffffff",
+                  }}
+                  className=" text-[100px] uppercase text-transparent absolute top-40 -left-12 z-50 font-bold font-ursb"
+                >
+                  MILD STEEL
+                </p>
+                <p className=" absolute top-40 -left-12 text-[100px] uppercase text-white font-bold -z-20 font-ursb ">
+                  MILD STEEL
+                </p>
               </div>
             </div>
           ))}
 
-          <div className="w-[450px] h-[450px] px-5 mr-80 transition-all duration-300 transform mx-4">
-            <h2 className="text-4xl text-amber-300">Wanna See More?</h2>
+          <div className="img flex-shrink-0 w-[450px] h-[450px] px-5 mr-80 transition-all duration-300 transform mx-4">
+            <h2 className="text-7xl text-center font-bold text-white mt-20">
+              Wanna See <br /> More?
+            </h2>
             <div className="img w-[1px] h-5 absolute top-0 left-[50%]"></div>
+            <div className="mt-20 flex items-center justify-center gap-3">
+              <Button />
+            </div>
           </div>
           <div className="inline-block flex-shrink-0">
             <div className="w-[360px] h-[450px] px-20 transition-all duration-300 transform mx-4"></div>
@@ -231,7 +237,7 @@ const Hero = () => {
             <div className="w-[50px] h-[450px] px-20 transition-all duration-300 transform mx-4"></div>
           </div>
         </div>
-        {isPinned && <div style={{ height: "100vh" }}></div>}
+        {/* {isPinned && <div style={{ height: "100vh" }}></div>} */}
       </div>
     </div>
   );
