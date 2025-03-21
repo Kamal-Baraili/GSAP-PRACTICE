@@ -1,3 +1,4 @@
+import About from "../../components/ui/about-us/about";
 import Contact from "../../components/ui/contact/contact";
 import Hero from "../../components/ui/homepage/Hero";
 import MainGateHero from "../../components/ui/homepage/mainGateHero";
@@ -9,9 +10,10 @@ const Homepage = () => {
     <>
       <MainGateHero />
       <Hero />
+      <About />
       <Services />
-      <Testimonial />
       <Contact />
+      <Testimonial />
     </>
   );
 };

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Button from "../../shared/button/button";
 import { imageData } from "../../../db/mockdata";
+import Nav from "../../layout/nav";
 
 const Hero = () => {
   const mainRef = useRef<HTMLDivElement | null>(null);
@@ -162,6 +163,7 @@ const Hero = () => {
 
   return (
     <div ref={wrapperRef} className="relative">
+      <Nav />
       <div
         ref={heroContainerRef}
         className="relative h-screen overflow-hidden"
@@ -222,12 +224,18 @@ const Hero = () => {
           ))}
 
           <div className="img flex-shrink-0 w-[450px] h-[450px] px-5 mr-80 transition-all duration-300 transform mx-4">
-            <h2 className="text-7xl text-center font-bold text-white mt-20">
-              Wanna See <br /> More?
+            <h2 className="text-5xl text-center font-bold text-white mt-20 leading-20">
+              Please View Our <br /> Gate Collection.
             </h2>
             <div className="img w-[1px] h-5 absolute top-0 left-[50%]"></div>
-            <div className="mt-20 flex items-center justify-center gap-3">
-              <Button />
+            <div className="mt-14 flex items-center justify-center gap-3">
+              <Button
+                text="View More"
+                color="text-black"
+                bgColor="bg-amber-300"
+                src="/homepage/open-gate.svg"
+                secondSrc="/btn-handle.png"
+              />
             </div>
           </div>
           <div className="inline-block flex-shrink-0">

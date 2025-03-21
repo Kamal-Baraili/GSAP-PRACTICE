@@ -1,7 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
-import Nav from "../../layout/nav";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,11 +107,7 @@ const MainGateHero = () => {
 
   return (
     <>
-      <Nav />
-      <div
-        ref={container}
-        className="h-screen relative overflow-hidden bg-[#F7F4F4]"
-      >
+      <div ref={container} className="h-screen overflow-hidden bg-[#F7F4F4]">
         <div className="flex justify-between absolute inset-0">
           <div ref={box1} className="h-full w-1/2 ">
             <img

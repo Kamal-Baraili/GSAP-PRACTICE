@@ -1,28 +1,40 @@
-const TestimonialCard = () => {
+interface Props {
+  imgSrc: string;
+  reviewDesc: string;
+  reviewName: string;
+  reviewPost: string;
+  sliderRef: React.RefObject<HTMLDivElement | null>;
+}
+
+const TestimonialCard = ({
+  imgSrc,
+  reviewDesc,
+  reviewName,
+  reviewPost,
+  sliderRef,
+}: Props) => {
   return (
     <>
-      <div className="px-4">
-        <div className="p-7 bg-amber-50 text-black mt-20 rounded-xl">
-          <div className="item-center flex justify-center">
-            <div className="w-fit relative">
+      <div ref={sliderRef} className="px-4 w-8/11 mx-auto">
+        <div className="p-7 text-white mt-20 rounded-4xl flex border border-zinc-800">
+          <div className="w-1/2 item-center flex justify-start">
+            <div className="w-fit">
               <img
-                className="rounded-full w-20 h-20"
-                src="/homepage/review_img1.svg"
+                className=" w-full rounded-4xl h-[40vh] "
+                src={imgSrc}
                 alt=""
               />
-              <div className="absolute top-0 right-0 z-10 p-1 w-7 h-7 rounded-full bg-primary">
-                <img className="h-5" src="/homepage/quote.svg" alt="" />
-              </div>
             </div>
           </div>
-          <p className="text-center my-6">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Repudiandae quis, provident accusantium exercitationem ad deserunt
-            distinctio.
-          </p>
-          <div className="flex flex-col items-center">
-            <h3 className="font-bold">Ram Shah</h3>
-            <h4 className="mt-1">UI/UX Designer</h4>
+          <div className="w-1/2 flex flex-col justify-center">
+            <div className=" p-1 w-7 h-7 rounded-full bg-primary mb-10">
+              <img className="h-5" src="/homepage/quote.svg" alt="" />
+            </div>
+            <p className="my-6">"{reviewDesc}"</p>
+            <div className="">
+              <h3 className="font-bold">{reviewName}</h3>
+              <h4 className="mt-1">{reviewPost}</h4>
+            </div>
           </div>
         </div>
       </div>
